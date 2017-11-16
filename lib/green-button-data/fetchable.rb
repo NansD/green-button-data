@@ -240,12 +240,6 @@ module GreenButtonData
         params = {}
 
         options.each do |key, value|
-          if key == :published_min || key == :published_max
-            if value.respond_to? :to_time
-              value = value.to_time.to_i
-            end
-          end
-
           unless key == :ssl || key == :token || key == :subscription_id
             params[key.to_s.dasherize] = value
           end
